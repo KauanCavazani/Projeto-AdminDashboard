@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel Geral</title>
+    <title>SafeCommerce | Visão Geral</title>
+
+    <!-- Icon -->
+    <link rel="icon" href="/assets/images/logo-icon.png">
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -12,6 +15,7 @@
     
     <!-- style -->
     <link rel="stylesheet" href="/public/css/main.css">
+    <link rel="stylesheet" href="/public/css/painel.css">
 </head>
 <body>
 
@@ -21,42 +25,23 @@
         <!-- barra lateral -->
         <nav class="fixed-top align-top" id="sidebar-wrapper" role="navigation">
             <div class="simplebar-content">
-                <a href="#" class="sidebar-brand">
-                    <span class="align-middle">SafeCommerce</span>
-                </a>
+                <div class="sidebar-top-header">
+                    <a href="#" class="sidebar-brand">
+                        <img class="logo-icon" src="/assets/images/logo-icon2.png">
+                        <span class="align-middle"><strong>SafeCommerce</strong></span>
+                    </a>
+                    <i class="bi bi-x-lg" id="btn-close" role="button"></i>
+                </div>
                 <ul class="navbar-nav align-self-stretch">
-                    <li class="sidebar-header">Páginas</li>
-                    <li><a href="#" class="nav-link text-left active" role="button"><i class="bi bi-bar-chart"></i>Dashboard</a></li>
-                    <li class="has-sub"><a href="#" class="nav-link collapsed text-left" role="button" data-toggle="collapse"><i class="bi bi-person"></i>Perfil</a>
-                        <div class="collapse menu mega-dropdown" id="collapseExample2">
-                            <div class="dropdown" aria-labelledby="navbarDropdown">
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="col-lg-12 px-2">
-                                            <div class="submenu-box">
-                                                <ul class="list-unstyled m-0">
-                                                    <li><a href="">Opção 1</a></li>
-                                                    <li><a href="">Opção 2</a></li>
-                                                    <li><a href="">Opção 3</a></li>
-                                                    <li><a href="">Opção 4</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li><a href="" class="nav-link text-left" role="button"><i class="bi bi-bar-chart"></i>Menu 1</a></li>
-                    <li><a href="" class="nav-link text-left" role="button"><i class="bi bi-bar-chart"></i>Menu 2</a></li>
-                    <li><a href="" class="nav-link text-left" role="button"><i class="bi bi-bar-chart"></i>Menu 3</a></li>
-                    <li class="sidebar-header">Ferramentas e conponentes</li>
-                    <li><a href="" class="nav-link text-left" role="button"><i class="bi bi-bar-chart"></i>Menu 4</a></li>
-                    <li><a href="" class="nav-link text-left" role="button"><i class="bi bi-bar-chart"></i>Menu 5</a></li>
-                    <li class="sidebar-header">Ferramentas e conponentes</li>
-                    <li><a href="" class="nav-link text-left" role="button"><i class="bi bi-bar-chart"></i>Menu 6</a></li>
-                    <li><a href="" class="nav-link text-left" role="button"><i class="bi bi-bar-chart"></i>Menu 7</a></li>
+                    <li class="sidebar-header">Menu</li>
+                    <li><a href="#" class="nav-link text-left options-menu active" role="button"><i class="bi bi-bar-chart"></i>Visão Geral</a></li>
+                    <li class="sidebar-header">Servidores</li>
+                    <li><a href="" class="nav-link text-left options-menu" role="button"><i class="bi bi-bar-chart"></i>Servidor 1</a></li>
+                    <li><a href="" class="nav-link text-left options-menu" role="button"><i class="bi bi-bar-chart"></i>Servidor 2</a></li>
+                    <li><a href="" class="nav-link text-left options-menu" role="button"><i class="bi bi-bar-chart"></i>Servidor 3</a></li>
+                    <li><a href="" class="nav-link text-left options-menu" role="button"><i class="bi bi-bar-chart"></i>Servidor 4</a></li>
+                    <li class="sidebar-header">Cadastro de servidores</li>
+                    <li><a href="" class="nav-link text-left options-menu" role="button"><i class="bi bi-bar-chart"></i>Cadastrar</a></li>
                     
                 </ul>
             </div>
@@ -67,23 +52,25 @@
         <div id="page-content-wrapper">
             <div id="content">
                 <div class="container-fluid p-0 px-lg-0 px-md-0">
-                    <nav class="navbar navbar-expand navbar-light my-navbar">
-                        <div type="button" id="bar" class="nav-icon1 hamburguer animated fadeInLeft is-closed" data-toggle="offcanvas">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                    <nav class="navbar navbar-expand navbar-light my-navbar shadow container-fluid">
+                        <div class="box-hamburguer-menu">
+                            <div type="button" id="bar" class="nav-icon1 hamburguer" data-toggle="offcanvas">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <form class="d-none d-sm-inline-block form-inline navbar-search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light" placeholder="Procure por...">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button"><i class="bi bi-search"></i></button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
 
-                        <form class="d-none d-sm-inline-block form-inline navbar-search">
-                            <div class="input-group">
-                                <input type="text" class="form-control bg-light" placeholder="Procure por...">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button"><i class="bi bi-search"></i></button>
-                                </div>
-                            </div>
-                        </form>
-
-                        <ul class="navbar-nav m-auto">
+                        <ul class="navbar-nav navbar-menu">
                             <li class="nav-item dropdown d-sm-none">
                                 <div class="dropdown-menu dropdown-menu-right p-3">
                                     <form class="form-inline mr-auto w-100 navbar-search">
@@ -96,13 +83,9 @@
                                     </form>
                                 </div>
                             </li>
-                            <li class="nav-item dropdown"><a href="#" class="nav-link"><i class="bi bi-bell-fill"></i>
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a></li>
-                            <li class="nav-item dropdown"><a href="#" class="nav-link"><i class="bi bi-envelope-fill"></i>
-                                <span class="badge badge-danger badge-counter">7+</span>
-                            </a></li>
-                            <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown"><i class="bi bi-envelope-fill"></i>
+                            <li class="nav-item dropdown icon"><a href="#" class="nav-link"><i class="bi bi-bell-fill"></i></a></li>
+                            <li class="nav-item dropdown icon"><a href="#" class="nav-link"><i class="bi bi-envelope-fill"></i></a></li>
+                            <li class="nav-item dropdown icon"><a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Empresa</span>
                                 <span class="bi bi-person-circle img-profile"></span>
                             </a></li>
@@ -115,7 +98,7 @@
                         <div class="row">
                             <div class="col-md-12 mt-lg-4 mt-4">
                                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                                    <h1 class="h3 mb-0 text-gray-800">Painel Geral</h1>
+                                    <h1 class="h3 mb-0 text-gray-800">Visão Geral</h1>
                                     <a href="" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                         <i class="bi bi-cloud-arrow-down-fill"></i>
                                         Gerar relatório
@@ -129,12 +112,8 @@
                                     <div class="col-sm-3">
                                         <div class="card">
                                             <div class="card-body">
-                                                <h5 class="card-title mb-4">Vendas</h5>
-                                                <h5 class="display-5 mt-1 mb-3">2.4534</h5>
-                                            </div>
-                                            <div class="mb-1">
-                                                <span class="text-danger"><i class="mdi mdi-arrow-bottom-right"></i>364</span>
-                                                <span class="text-muted">Desde semana passada</span>
+                                                <h5 class="card-title mb-4">Servidor 1</h5>
+                                                <h5 class="display-5 mt-1 mb-3">Status</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -142,12 +121,8 @@
                                     <div class="col-sm-3">
                                         <div class="card">
                                             <div class="card-body">
-                                                <h5 class="card-title mb-4">Vendas</h5>
-                                                <h5 class="display-5 mt-1 mb-3">2.4534</h5>
-                                            </div>
-                                            <div class="mb-1">
-                                                <span class="text-danger"><i class="mdi mdi-arrow-bottom-right"></i>364</span>
-                                                <span class="text-muted">Desde semana passada</span>
+                                                <h5 class="card-title mb-4">Servidor 2</h5>
+                                                <h5 class="display-5 mt-1 mb-3">Status</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -155,12 +130,8 @@
                                     <div class="col-sm-3">
                                         <div class="card">
                                             <div class="card-body">
-                                                <h5 class="card-title mb-4">Vendas</h5>
-                                                <h5 class="display-5 mt-1 mb-3">2.4534</h5>
-                                            </div>
-                                            <div class="mb-1">
-                                                <span class="text-danger"><i class="mdi mdi-arrow-bottom-right"></i>364</span>
-                                                <span class="text-muted">Desde semana passada</span>
+                                                <h5 class="card-title mb-4">Servidor 3</h5>
+                                                <h5 class="display-5 mt-1 mb-3">Status</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -168,34 +139,19 @@
                                     <div class="col-sm-3">
                                         <div class="card">
                                             <div class="card-body">
-                                                <h5 class="card-title mb-4">Vendas</h5>
-                                                <h5 class="display-5 mt-1 mb-3">2.4534</h5>
-                                            </div>
-                                            <div class="mb-1">
-                                                <span class="text-danger"><i class="mdi mdi-arrow-bottom-right"></i>364</span>
-                                                <span class="text-muted">Desde semana passada</span>
+                                                <h5 class="card-title mb-4">Servidor 4</h5>
+                                                <h5 class="display-5 mt-1 mb-3">Status</h5>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>    
                                 </div>
 
-                                <div class="col-md-12 mt-4">
+                                <div class="col-md-12 mt-4 margin-table">
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="d-md-flex align-items-center"></div>
                                             <div>
-                                                <h4 class="card-title">Top produtos vendidos</h4>
-                                                <h5 class="card-subtitle">Visão Geral</h5>
-                                            </div>
-                                            <div class="ml-auto">
-                                                <div class="dl">
-                                                    <select class="custom-select">
-                                                        <option value="0" selected>Mensalmente</option>
-                                                        <option value="0">Semanalmente</option>
-                                                        <option value="0">Diaramente</option>
-                                                        <option value="0">Anualmente</option>
-                                                    </select>
-                                                </div>
+                                                <h4 class="card-title">Servidores cadastrados</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -204,8 +160,8 @@
                                         <table class="table v-middle">
                                             <thead>
                                                 <tr class="bg-light">
-                                                    <th class="border-top-0">Exemplo 1</th>
-                                                    <th class="border-top-0">Exemplo 2</th>
+                                                    <th class="border-top-0">ID</th>
+                                                    <th class="border-top-0">Marca</th>
                                                     <th class="border-top-0">Exemplo 3</th>
                                                     <th class="border-top-0">Exemplo 4</th>
                                                     <th class="border-top-0">Exemplo 5</th>
@@ -216,15 +172,11 @@
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div>
-                                                                <h4 class="m-b-0 font-16">Admin</h4>
-                                                            </div>
-                                                        </div>
+                                                        1
                                                     </td>
 
                                                     <td>
-                                                        Usuário 1
+                                                        Marca
                                                     </td>
 
                                                     <td>

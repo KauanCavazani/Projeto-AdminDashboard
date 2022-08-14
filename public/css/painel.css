@@ -1,0 +1,91 @@
+/* main card do topo */
+
+.card {
+    margin-bottom: 24px;
+    border: none;
+    box-shadow: 0 0 0.875rem 0 rgba(33,37,41,.05);
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+
+.card-title {
+    font-size: .875rem;
+    color: #495057;
+}
+
+.card-body h1 {
+    font-size: 1.75rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #000;
+}
+
+.text-gray-800 {
+    color: #5a5c69;
+    font-size: 1.75rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem 0 rgba(58,59,69,.2);
+}
+
+.btn-sm {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+}
+
+.font-16 {
+    font-size: 16px;
+}
+
+.card .card-title {
+    position: relative;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card .card-subtitle {
+    font-weight: 300;
+    color: #a1aab2;
+    margin-top: -0.375rem;
+}
+
+/* fim da main card do topo */
+
+/* tabela */
+
+.m-r-10 {
+    margin-right: 10px;
+}
+
+.margin-table {
+    padding: 0;
+}
+
+.table-responsive {
+    margin-top: -25px;
+}
+
+.table td,.table th {
+    padding: 1rem;
+    font-size: 14px;
+    color: #333;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table h5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #585858;
+}
+
+/* fim da tabela */
