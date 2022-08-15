@@ -7,7 +7,7 @@ var btn_close = document.getElementById("btn-close");
 var bodyClientWidth = Number(document.body.clientWidth);
 
 var isMobile = false;
-var isOpen = false;
+var isSideBarOpen = false;
 
 
 function responsive(){
@@ -16,14 +16,12 @@ function responsive(){
         isMobile = true;
     } else {
         isMobile = false
-    }
-    console.log(isMobile);
-    
+    } 
 }
 
 
 bar.addEventListener("click", function() {
-    if(isOpen) {
+    if(isSideBarOpen) {
         closeSideBar();
     } else {
         openSideBar();
@@ -32,27 +30,24 @@ bar.addEventListener("click", function() {
 
 btn_close.addEventListener("click", function() {
     closeSideBar();
-    console.log('clicou')
 })
 
 function openSideBar() {
     console.log("entrou")
     if(isMobile) {
-        console.log("é mobile")
         sidebar.style.display = 'block';
         sidebar.style.width = '0px'
         sidebar.style.width = '270px'
         hamburguer_menu.style.display = 'none';
         btn_close.style.display = 'block';
     } else {
-        console.log("Não é mobile")
         sidebar.style.display = 'block';
         sidebar.style.width = '0px';
         page_content.style.marginLeft = '270px';
         sidebar.style.width = '270px';    
     }
 
-    isOpen = true;
+    isSideBarOpen = true;
 }
 
 function closeSideBar() {
@@ -66,5 +61,36 @@ function closeSideBar() {
         page_content.style.marginLeft = '0'    
     }
 
-    isOpen = false;
+    isSideBarOpen = false;
 }
+
+// Fim de abrir e fechar barra lateral
+
+// Dropdown
+
+var btnDropdown = document.getElementById("dropdown");
+var dropdownContent = document.getElementById("dropdown-content");
+var isDropdownActive = false;
+
+console.log(btnDropdown);
+
+btnDropdown.addEventListener("click", function() {
+    if(isDropdownActive) {
+        closeDropdown();
+    } else {
+        openDropdown();
+    }
+});
+
+function openDropdown() {
+    dropdownContent.style.display = 'block';
+    dropdownContent.style.display = 'flex';
+
+    isDropdownActive = true;
+};
+
+function closeDropdown() {
+    dropdownContent.style.display = 'none';
+
+    isDropdownActive = false;
+};

@@ -221,6 +221,38 @@ body, html {
     margin-top: 4px;
 }
 
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    min-width: 150px;
+    background-color: #fff;
+    z-index: 1;
+    right: 0;
+    margin-right: 7px;
+    top: 50px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: #000;
+    float: none;
+    padding: 12px 16px;
+    text-align: left;   
+}
+
+.dropdown-content .divisor {
+    width: 80%;
+    height: 1px;
+    margin: 0 auto;
+    background-color: #dc3e1d;
+}
+
+.dropdown-content a:hover {
+    color: #fff;
+    background-color: #dc3e1d;
+}
+
 /* fim da header */
 
 /* footer */
