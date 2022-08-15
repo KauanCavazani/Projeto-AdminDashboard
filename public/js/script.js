@@ -9,11 +9,18 @@ var bodyClientWidth = Number(document.body.clientWidth);
 var isMobile = false;
 var isOpen = false;
 
-if (bodyClientWidth < 910) {
-    isMobile = true;
-} else {
-    isMobile = false
+
+function responsive(){
+    bodyClientWidth = Number(document.body.clientWidth);
+    if (bodyClientWidth < 910) {
+        isMobile = true;
+    } else {
+        isMobile = false
+    }
+    console.log(isMobile);
+    
 }
+
 
 bar.addEventListener("click", function() {
     if(isOpen) {
@@ -29,11 +36,17 @@ btn_close.addEventListener("click", function() {
 })
 
 function openSideBar() {
+    console.log("entrou")
     if(isMobile) {
+        console.log("é mobile")
         sidebar.style.display = 'block';
+        sidebar.style.width = '0px'
+        sidebar.style.width = '270px'
         hamburguer_menu.style.display = 'none';
         btn_close.style.display = 'block';
     } else {
+        console.log("Não é mobile")
+        sidebar.style.display = 'block';
         sidebar.style.width = '0px';
         page_content.style.marginLeft = '270px';
         sidebar.style.width = '270px';    
@@ -43,10 +56,11 @@ function openSideBar() {
 }
 
 function closeSideBar() {
+    console.log("entrou")
     if(isMobile) {
-        sidebar.style.display = 'none';
         hamburguer_menu.style.display = 'block';
         btn_close.style.display = 'none';
+        sidebar.style.display = 'none';
     } else {
         sidebar.style.width = '0';
         page_content.style.marginLeft = '0'    
