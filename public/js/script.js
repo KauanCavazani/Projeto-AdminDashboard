@@ -14,6 +14,7 @@ function responsive(){
     bodyClientWidth = Number(document.body.clientWidth);
     if (bodyClientWidth < 910) {
         isMobile = true;
+        
     } else {
         isMobile = false
     } 
@@ -51,7 +52,6 @@ function openSideBar() {
 }
 
 function closeSideBar() {
-    console.log("entrou")
     if(isMobile) {
         hamburguer_menu.style.display = 'block';
         btn_close.style.display = 'none';
@@ -71,8 +71,6 @@ function closeSideBar() {
 var btnDropdown = document.getElementById("dropdown");
 var dropdownContent = document.getElementById("dropdown-content");
 var isDropdownActive = false;
-
-console.log(btnDropdown);
 
 btnDropdown.addEventListener("click", function() {
     if(isDropdownActive) {
@@ -94,3 +92,5 @@ function closeDropdown() {
 
     isDropdownActive = false;
 };
+
+// Fim do dropdown
