@@ -120,7 +120,7 @@ body, html {
     letter-spacing: 2px;
 }
 
-.navbar-nav li .options-menu:active, .active {
+.navbar-nav li .options-menu:active, .options-menu:hover, .active {
     border-left: 4px solid #fff;
 }
 
