@@ -42,6 +42,10 @@ body, html {
     box-shadow: inset 0 1px 1px #fff, 0 0 4px #dc3e1d;
 }
 
+.div-btn-register {
+    text-align: center;
+}
+
 /* Barra lateral */
 
 #sidebar-wrapper {
