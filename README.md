@@ -1,4 +1,4 @@
-# ![Logo](assets/readme/logoReadme.png) Admin Dashboard
+# Admin Dashboard
 
 Projeto do 2º semestre do curso de ciências da computação pela São Paulo Tech School
 
