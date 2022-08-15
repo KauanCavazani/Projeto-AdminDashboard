@@ -1,4 +1,4 @@
-![Logo](assets/images/logo-icon.png)
+![Logo](assets/readme/logoReadme)
 
 # Admin Dashboard
 
