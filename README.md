@@ -10,7 +10,7 @@ Projeto do 2º semestre do curso de ciências da computação pela São Paulo Te
 
 ## Screenshots
 
-![App Screenshot](assets/readme/screenshot.png)
+![App Screenshot](./public/assets/readme/screenshot.png)
 
 
 ## Autores
