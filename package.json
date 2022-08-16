@@ -1,0 +1,29 @@
+{
+  "name": "projeto-admindashboard",
+  "version": "1.0.0",
+  "description": "Projeto do 2º semestre do curso de ciências da computação pela São Paulo Tech School",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon --exec node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KauanCavazani/Projeto-AdminDashboard.git"
+  },
+  "author": "Kauan Cavazani Brianez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KauanCavazani/Projeto-AdminDashboard/issues"
+  },
+  "homepage": "https://github.com/KauanCavazani/Projeto-AdminDashboard#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.19",
+    "path": "^0.12.7"
+  }
+}
