@@ -13,7 +13,8 @@ Admin Dashboard desenvolvida para o projeto de 2º semestre do curso de ciência
 
 ## Screenshots
 
-![App Screenshot](./public/assets/readme/screenshot.png)
+![App Screenshot](./public/assets/readme/screenshotPainel.png)
+![App Screenshot](./public/assets/readme/screenshotCadastro.png)
 
 # Funcionalidades
 
