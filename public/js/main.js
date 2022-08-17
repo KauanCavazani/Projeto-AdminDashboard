@@ -12,7 +12,7 @@ class mySidebar extends HTMLElement {
                 </div>
                 <ul class="navbar-nav align-self-stretch">
                     <li class="sidebar-header">Menu</li>
-                    <li><a href="./painel.html" class="nav-link text-left options-menu" role="button"><i class="bi bi-bar-chart"></i>Visão Geral</a></li>
+                    <li><a href="./index.html" class="nav-link text-left options-menu" role="button"><i class="bi bi-bar-chart"></i>Visão Geral</a></li>
                     <li class="sidebar-header">Servidores</li>
                     <li><a href="" class="nav-link text-left options-menu" role="button"><i class="bi bi-hdd"></i>Servidor 1</a></li>
                     <li><a href="" class="nav-link text-left options-menu" role="button"><i class="bi bi-hdd"></i>Servidor 2</a></li>

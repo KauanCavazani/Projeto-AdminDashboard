@@ -4,8 +4,9 @@ var dotenv = require('dotenv');
 var cors = require('cors');
 var DOOR = 3333;
 
-var app = express;
+var app = express();
 
+var indexRouter = require('./src/routes/index');
 var serverRouter = require('./src/routes/servers');
 
 dotenv.config();
@@ -16,6 +17,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(cors());
 
+app.use("/", indexRouter);
 app.use("/servers", serverRouter);
 
 app.listen(DOOR, () => {

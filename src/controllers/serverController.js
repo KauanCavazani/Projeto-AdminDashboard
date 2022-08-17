@@ -1,11 +1,11 @@
 var serverModel = require("../models/serverModel");
 
 function registerServer(req, res) {
-    var model = req.body.serverModel;
-    var os = req.body.serverOs;
-    var cpuAmount = req.body.serverCpuAmount;
-    var ramMemory = req.body.serverRamMemory;
-    var diskAmount = req.body.serverDiskAmount;
+    var model = req.body.modelServer;
+    var os = req.body.osServer;
+    var cpuAmount = req.body.cpuAmountServer;
+    var ramMemory = req.body.ramMemoryServer;
+    var diskAmount = req.body.diskAmountServer;
 
     if(model === undefined) {
         res.status(400).send("O modelo está undefined!");
