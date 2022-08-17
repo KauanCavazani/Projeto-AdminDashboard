@@ -48,42 +48,7 @@
 
                             <!-- Cards -->
                             <div class="col-md-12">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h5 class="card-title mb-4">Servidor 1</h5>
-                                                <h5 class="display-5 mt-1 mb-3">Status</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-3">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h5 class="card-title mb-4">Servidor 2</h5>
-                                                <h5 class="display-5 mt-1 mb-3">Status</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-3">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h5 class="card-title mb-4">Servidor 3</h5>
-                                                <h5 class="display-5 mt-1 mb-3">Status</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-3">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h5 class="card-title mb-4">Servidor 4</h5>
-                                                <h5 class="display-5 mt-1 mb-3">Status</h5>
-                                            </div>
-                                        </div>
-                                    </div>    
+                                <div id="cards_servers" class="row"> 
                                 </div>
 
                                 <div class="col-md-12 mt-4 margin-table">
@@ -149,6 +114,7 @@
                 var servers = JSON.parse(sessionStorage.SERVERS);
                 console.log(servers);  
                 setTable(servers); 
+                setCards(servers);
             });
 
             if(answer.ok) {
@@ -167,7 +133,10 @@
 
         var serverTable = document.getElementById("server_table");
 
-        for(let i in data) {
+        if(data.length == 0) {
+            serverTable.innerHTML  = '';
+        } else {
+            for(let i in data) {
             serverTable.innerHTML += 
             `
             <tr>
@@ -195,6 +164,31 @@
                 ${data[i].qtd_disco}
                 </td>
             </tr>
+            `
+            }
+        }       
+    }
+
+    function setCards(data) {
+        console.log("Entrou no steCards()");
+
+        var cardsServers = document.getElementById("cards_servers");
+
+        if(data.length == 0) {
+            cardsServers.innerHTML = '<h4 class="card-title h4-style">Nenhum servidor cadastrado</h4>';
+        }
+
+        for(let i in data) {
+            cardsServers.innerHTML += 
+            `
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">${data[i].modelo}</h5>
+                        <h5 class="display-5 mt-1 mb-3">Status</h5>
+                    </div>
+                </div>
+            </div>
             `
         }
     }
