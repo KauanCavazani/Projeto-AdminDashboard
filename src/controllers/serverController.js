@@ -1,3 +1,4 @@
+const res = require("express/lib/response");
 var serverModel = require("../models/serverModel");
 
 function registerServer(req, res) {
@@ -36,6 +37,27 @@ function registerServer(req, res) {
         );
 };
 
+function getServers(req, res) {
+    var table = req.body.tableServer;
+
+    serverModel.getServers(table)
+        .then(
+            function(result) {
+                res.json(result);
+            }
+        ).catch(
+            function(error) {
+                console.log(error);
+                console.log(
+                    "\nHouve um erro ao receber os dados dos servidores! Erro ",
+                    error.sqlMessage
+                );
+                res.status(500).json(error.sqlMessage);
+            }
+        );
+}
+
 module.exports = {
-    registerServer
+    registerServer,
+    getServers
 }

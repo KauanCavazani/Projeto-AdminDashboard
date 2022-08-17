@@ -108,82 +108,7 @@
                                                     <th class="border-top-0">Quantidade de disco</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        1
-                                                    </td>
-
-                                                    <td>
-                                                        Servidor 1
-                                                    </td>
-
-                                                    <td>
-                                                        Windows
-                                                    </td>
-
-                                                    <td>
-                                                        4
-                                                    </td>
-
-                                                    <td>
-                                                        16
-                                                    </td>
-
-                                                    <td>
-                                                        4
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        1
-                                                    </td>
-
-                                                    <td>
-                                                        Servidor 1
-                                                    </td>
-
-                                                    <td>
-                                                        Windows
-                                                    </td>
-
-                                                    <td>
-                                                        4
-                                                    </td>
-
-                                                    <td>
-                                                        16
-                                                    </td>
-
-                                                    <td>
-                                                        4
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        1
-                                                    </td>
-
-                                                    <td>
-                                                        Servidor 1
-                                                    </td>
-
-                                                    <td>
-                                                        Windows
-                                                    </td>
-
-                                                    <td>
-                                                        4
-                                                    </td>
-
-                                                    <td>
-                                                        16
-                                                    </td>
-
-                                                    <td>
-                                                        4
-                                                    </td>
-                                                </tr>
+                                            <tbody id="server_table">
                                             </tbody>
                                         </table>
                                     </div>
@@ -203,3 +128,77 @@
 <script src="./js/main.js"></script>
 <script src="./js/script.js"></script>
 </html>
+<script>
+
+    function getData() {
+        var tableVar = "Servidor"
+
+        fetch("/servers/getServers", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                tableServer: tableVar
+            })
+        }).then((answer) => {
+            console.log(answer);
+
+            answer.json().then(json => {   
+                sessionStorage.SERVERS = JSON.stringify(json);
+                var servers = JSON.parse(sessionStorage.SERVERS);
+                console.log(servers);  
+                setTable(servers); 
+            });
+
+            if(answer.ok) {
+                console.log("A requisição foi um sucesso!");
+            } else {
+                console.log("ERROR: answer is not ok");
+            }
+        }).catch((answer) => {
+            console.log(`Erro: ${answer}`);
+        });
+
+    }
+
+    function setTable(data) {
+        console.log("Entrou no setTable()");
+
+        var serverTable = document.getElementById("server_table");
+
+        for(let i in data) {
+            serverTable.innerHTML += 
+            `
+            <tr>
+                <td>
+                ${data[i].idServidor}
+                </td>
+
+                <td>
+                ${data[i].modelo}
+                </td>
+
+                <td>
+                ${data[i].SO}
+                </td>
+
+                <td>
+                ${data[i].qtd_cpus}
+                </td>
+
+                <td>
+                ${data[i].qtd_memoria_ram}
+                </td>
+
+                <td>
+                ${data[i].qtd_disco}
+                </td>
+            </tr>
+            `
+        }
+    }
+
+    getData();
+
+</script>
