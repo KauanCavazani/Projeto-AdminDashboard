@@ -19,7 +19,7 @@ Admin Dashboard desenvolvida para o projeto de 2º semestre do curso de ciência
 # Funcionalidades
 
 - Cadastrar servidores
-- Consultar servidores cadastrados (em desenvolvimento...)
+- Consultar servidores cadastrados
 - Gerar relátorio dos servidores (em desenvolvimento...)
 - Gerar gráficos sobre os componentes dos servidores (em desenvolvimento...)
 
