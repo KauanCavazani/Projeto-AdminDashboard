@@ -94,3 +94,54 @@ function closeDropdown() {
 };
 
 // Fim do dropdown
+
+// Recebe dados do banco e exibe na sidebar
+
+function getData(index) {
+    var tableVar = "Servidor"
+
+    fetch("/servers/getServers", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            tableServer: tableVar
+        })
+    }).then((answer) => {
+        console.log(answer);
+
+        answer.json().then(json => {   
+            sessionStorage.SERVERS = JSON.stringify(json);
+            var servers = JSON.parse(sessionStorage.SERVERS);
+            console.log(servers);  
+            if(index) {
+                setTable(servers); 
+                setCards(servers);
+                setLinks(servers);    
+            } else {
+                setLinks(servers);    
+            }
+        });
+
+        if(answer.ok) {
+            console.log("A requisição foi um sucesso!");
+        } else {
+            console.log("ERROR: answer is not ok");
+        }
+    }).catch((answer) => {
+        console.log(`Erro: ${answer}`);
+    });
+
+}
+
+function setLinks(data) {
+    var serverLinks = document.getElementById("server_links");
+
+    for(let i in data) {
+        serverLinks.innerHTML += 
+        `
+        <li><a href="" class="nav-link text-left options-menu" role="button"><i class="bi bi-hdd"></i>${data[i].modelo}</a></li>
+        `
+    }
+};

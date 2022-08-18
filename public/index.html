@@ -95,104 +95,71 @@
 </html>
 <script>
 
-    function getData() {
-        var tableVar = "Servidor"
+const indexPage = true;
 
-        fetch("/servers/getServers", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                tableServer: tableVar
-            })
-        }).then((answer) => {
-            console.log(answer);
+function setTable(data) {
+    console.log("Entrou no setTable()");
 
-            answer.json().then(json => {   
-                sessionStorage.SERVERS = JSON.stringify(json);
-                var servers = JSON.parse(sessionStorage.SERVERS);
-                console.log(servers);  
-                setTable(servers); 
-                setCards(servers);
-            });
+    var serverTable = document.getElementById("server_table");
 
-            if(answer.ok) {
-                console.log("A requisição foi um sucesso!");
-            } else {
-                console.log("ERROR: answer is not ok");
-            }
-        }).catch((answer) => {
-            console.log(`Erro: ${answer}`);
-        });
-
-    }
-
-    function setTable(data) {
-        console.log("Entrou no setTable()");
-
-        var serverTable = document.getElementById("server_table");
-
-        if(data.length == 0) {
-            serverTable.innerHTML  = '';
-        } else {
-            for(let i in data) {
-            serverTable.innerHTML += 
-            `
-            <tr>
-                <td>
-                ${data[i].idServidor}
-                </td>
-
-                <td>
-                ${data[i].modelo}
-                </td>
-
-                <td>
-                ${data[i].SO}
-                </td>
-
-                <td>
-                ${data[i].qtd_cpus}
-                </td>
-
-                <td>
-                ${data[i].qtd_memoria_ram}
-                </td>
-
-                <td>
-                ${data[i].qtd_disco}
-                </td>
-            </tr>
-            `
-            }
-        }       
-    }
-
-    function setCards(data) {
-        console.log("Entrou no steCards()");
-
-        var cardsServers = document.getElementById("cards_servers");
-
-        if(data.length == 0) {
-            cardsServers.innerHTML = '<h4 class="card-title h4-style">Nenhum servidor cadastrado</h4>';
-        }
-
+    if(data.length == 0) {
+        serverTable.innerHTML  = '';
+    } else {
         for(let i in data) {
-            cardsServers.innerHTML += 
-            `
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title mb-4">${data[i].modelo}</h5>
-                        <h5 class="display-5 mt-1 mb-3">Status</h5>
-                    </div>
+        serverTable.innerHTML += 
+        `
+        <tr>
+            <td>
+            ${data[i].idServidor}
+            </td>
+
+            <td>
+            ${data[i].modelo}
+            </td>
+
+            <td>
+            ${data[i].SO}
+            </td>
+
+            <td>
+            ${data[i].qtd_cpus}
+            </td>
+
+            <td>
+            ${data[i].qtd_memoria_ram}
+            </td>
+
+            <td>
+            ${data[i].qtd_disco}
+            </td>
+        </tr>
+        `
+        }
+    }       
+}
+
+function setCards(data) {
+    var cardsServers = document.getElementById("cards_servers");
+
+    if(data.length == 0) {
+        cardsServers.innerHTML = '<h4 class="card-title h4-style">Nenhum servidor cadastrado</h4>';
+    }
+
+    for(let i in data) {
+        cardsServers.innerHTML += 
+        `
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">${data[i].modelo}</h5>
+                    <h5 class="display-5 mt-1 mb-3">Status</h5>
                 </div>
             </div>
-            `
-        }
+        </div>
+        `
     }
+}
 
-    getData();
+getData(indexPage);
 
 </script>
