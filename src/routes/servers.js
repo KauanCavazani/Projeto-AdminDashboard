@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-var serverController = require('../controllers/serverController');
+const serverController = require('../controllers/serverController');
 
 router.post("/registerServer", (req, res) => {
     serverController.registerServer(req, res);

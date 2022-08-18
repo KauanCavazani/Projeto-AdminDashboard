@@ -1,5 +1,4 @@
-const res = require("express/lib/response");
-var serverModel = require("../models/serverModel");
+const serverModel = require("../models/serverModel");
 
 function registerServer(req, res) {
     var model = req.body.modelServer;

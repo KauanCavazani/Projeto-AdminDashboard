@@ -1,13 +1,13 @@
-var express = require('express');
-var path = require('path');
-var dotenv = require('dotenv');
-var cors = require('cors');
-var DOOR = 3333;
+const express = require('express');
+const path = require('path');
+const dotenv = require('dotenv');
+const cors = require('cors');
+const DOOR = 3333;
 
-var app = express();
+const app = express();
 
-var indexRouter = require('./src/routes/index');
-var serverRouter = require('./src/routes/servers');
+const indexRouter = require('./src/routes/index');
+const serverRouter = require('./src/routes/servers');
 
 dotenv.config();
 
