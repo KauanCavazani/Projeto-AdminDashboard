@@ -10,4 +10,6 @@ CREATE TABLE Servidor (
     qtd_disco INT
 );
 
+drop table Servidor;
+
 SELECT * FROM Servidor;
