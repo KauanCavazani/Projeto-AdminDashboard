@@ -11,4 +11,8 @@ router.post("/getServers", (req, res) => {
     serverController.getServers(req, res);
 });
 
+router.post("/getCurrentServer", (req, res) => {
+    serverController.getCurrentServer(req, res);
+});
+
 module.exports = router;

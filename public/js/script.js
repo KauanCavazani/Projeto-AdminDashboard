@@ -141,7 +141,7 @@ function setLinks(data) {
     for(let i in data) {
         serverLinks.innerHTML += 
         `
-        <li><a href="../dashboard/${data[i].modelo}.html" class="nav-link text-left options-menu" role="button"><i class="bi bi-hdd"></i>${data[i].modelo}</a></li>
+        <li><a href="#" onclick="getCurrentServer(${data[i].idServidor})" class="nav-link text-left options-menu" role="button"><i class="bi bi-hdd"></i>${data[i].modelo}</a></li>
         `
     }
 };

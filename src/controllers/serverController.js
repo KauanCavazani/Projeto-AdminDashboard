@@ -56,7 +56,28 @@ function getServers(req, res) {
         );
 }
 
+function getCurrentServer() {
+    var currentServer = req.body.currentServerServer; // erro: req is not define
+    console.log(currentServer)
+    serverModel.getCurrentServer(currentServer)
+        .then(
+            function(result) {
+                res.json(result);
+            }
+        ).catch(
+            function(error) {
+                console.log(error);
+                console.log(
+                    "\nHouve um erro ao receber os dados dos servidores! Erro ",
+                    error.sqlMessage
+                );
+                res.status(500).json(error.sqlMessage);
+            }
+        );
+}
+
 module.exports = {
     registerServer,
-    getServers
+    getServers,
+    getCurrentServer
 }

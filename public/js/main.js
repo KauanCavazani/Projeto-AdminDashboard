@@ -98,12 +98,7 @@ class myFooter extends HTMLElement {
                                 <ul class="list-inline">
                                     <li class="footer-item">
                                         <a href="#" class="text-muted">
-                                            Suporte
-                                        </a>
-                                    </li>
-                                    <li class="footer-item">
-                                        <a href="#" class="text-muted">
-                                            Central de atendimento
+                                            Termos de Uso
                                         </a>
                                     </li>
                                     <li class="footer-item">
@@ -113,7 +108,17 @@ class myFooter extends HTMLElement {
                                     </li>
                                     <li class="footer-item">
                                         <a href="#" class="text-muted">
-                                            Termos
+                                            Cookies
+                                        </a>
+                                    </li>
+                                    <li class="footer-item">
+                                        <a href="#" class="text-muted">
+                                            Política da Empresa 
+                                        </a>
+                                    </li>
+                                    <li class="footer-item">
+                                        <a href="#" class="text-muted">
+                                            Contato 
                                         </a>
                                     </li>
                                 </ul>
