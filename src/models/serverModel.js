@@ -19,14 +19,15 @@ function getServers(table) {
     return database.execute(instruction);
 }
 
-function getCurrentServer(currentServer) {
-    console.log("ACESSEI O SERVER MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function getCurrentServer(): ", currentServer);
-    var instruction = 
+function getCurrentServer(idServer) {
+    console.log("ACESSEI O SERVER MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function getServer(): ", idServer);
+    var instruction =
     `
-    SELECT * FROM Servidor WHERE idServidor = ${currentServer};
+    SELECT * FROM Servidor WHERE idServidor = ${idServer};
     `
     return database.execute(instruction);
 }
+
 
 module.exports = {
     registerServer,

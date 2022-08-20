@@ -64,26 +64,25 @@ function getCurrentServer(server) {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            currentServerServer: server
+            currentServer: server
         })
     }).then((answer) => {
         console.log(answer);
 
-        answer.json().then(json => {   
+        answer.json().then(json => {
             sessionStorage.CURRENT_SERVER = JSON.stringify(json);
-            var currentServer = JSON.parse(sessionStorage.CURRENT_SERVER);
-            console.log(currentServer)
-            // setPageServer(currentServer); 
-        });
+            var server = JSON.parse(sessionStorage.CURRENT_SERVER);
+            console.log(server);
+        })
 
         if(answer.ok) {
-            console.log("A requisição foi um sucesso!");
+            console.log("A requisição do servidor atual foi um sucesso!");
         } else {
-            console.log("ERROR: answer is not ok");
+            console.log("ERROR: answer is not ok!");
         }
     }).catch((answer) => {
-        console.log(`Erro: ${answer}`);
-    });
+        console.log(`ERROR: ${answer}`);
+    })
 }
 
 // function setPageServer(server) {

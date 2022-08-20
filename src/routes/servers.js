@@ -13,6 +13,6 @@ router.post("/getServers", (req, res) => {
 
 router.post("/getCurrentServer", (req, res) => {
     serverController.getCurrentServer(req, res);
-});
+})
 
 module.exports = router;
