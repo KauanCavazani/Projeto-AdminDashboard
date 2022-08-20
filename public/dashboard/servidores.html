@@ -36,7 +36,11 @@
                     <!-- Conteudo da página -->
                     <div class="container-fluid px-lg-4">
                         <div class="row">
-                            
+                            <div class="col-md-12 mt-lg-4 mt-4">
+                                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                                    <h1 class="h3 mb-0 text-gray-800">Servidor</h1>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -51,48 +55,3 @@
 <script src="../js/main.js"></script>
 <script src="../js/script.js"></script>
 </html>
-<script>
-
-const indexPage = false;
-
-function getCurrentServer(server) {
-    console.log('id: ',server)
-
-    fetch("/servers/getCurrentServer", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            currentServer: server
-        })
-    }).then((answer) => {
-        console.log(answer);
-
-        answer.json().then(json => {
-            sessionStorage.CURRENT_SERVER = JSON.stringify(json);
-            var server = JSON.parse(sessionStorage.CURRENT_SERVER);
-            console.log(server);
-        })
-
-        if(answer.ok) {
-            console.log("A requisição do servidor atual foi um sucesso!");
-        } else {
-            console.log("ERROR: answer is not ok!");
-        }
-    }).catch((answer) => {
-        console.log(`ERROR: ${answer}`);
-    })
-}
-
-// function setPageServer(server) {
-//     var content = document.getElementById("content")
-//     console.log('setPageServer()', server)
-//     for(let i in server) {
-//         content.innerHTML += server[i].modelo;
-//     }
-// }
-
-getData(indexPage);
-
-</script>
