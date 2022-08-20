@@ -10,6 +10,7 @@ Admin Dashboard desenvolvida para o projeto de 2º semestre do curso de ciência
 ![image](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 ![image](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
 ![image](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+![image](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
 ## Screenshots
 
@@ -22,6 +23,11 @@ Admin Dashboard desenvolvida para o projeto de 2º semestre do curso de ciência
 - Consultar servidores cadastrados
 - Gerar relátorio dos servidores (em desenvolvimento...)
 - Gerar gráficos sobre os componentes dos servidores (em desenvolvimento...)
+
+# Instalações necessárias
+
+[![image](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en/download/)
+[![image](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/downloads/)
 
 ## Variáveis de Ambiente
 
@@ -57,6 +63,12 @@ Instale as dependências
 
 ```bash
   npm install
+```
+
+Instale a biblioteca pymysql
+
+```bash
+  pip install pymysql
 ```
 
 Inicie o servidor

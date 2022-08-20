@@ -1,6 +1,6 @@
 import pymysql
 
-db = pymysql.connect(host="localhost", user="root", passwd="Kauancb0311", db="safecommerce");
+db = pymysql.connect(host="localhost", user="root", passwd="senhaAqui", db="safecommerce");
 
 cursor = db.cursor()
 
