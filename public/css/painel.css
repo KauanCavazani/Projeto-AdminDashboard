@@ -28,13 +28,6 @@
     color: #000;
 }
 
-.text-gray-800 {
-    color: #5a5c69;
-    font-size: 1.75rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-
 .shadow-sm {
     box-shadow: 0 .125rem .25rem 0 rgba(58,59,69,.2);
 }

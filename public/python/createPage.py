@@ -5,7 +5,7 @@ os = platform.system()
 
 for i in result:
     if(os == "Linux"):
-        adress = f'../dashboard/{i[1]}.html'
+        adress = f'./public/dashboard/{i[1]}.html'
     else:
         adress = f'public/dashboard/{i[1]}.html'
 

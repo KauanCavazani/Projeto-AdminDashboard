@@ -2,13 +2,13 @@ const express = require('express');
 const path = require('path');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const spawn = require('child_process').spawn;
 const DOOR = 3333;
 
 const app = express();
 
 const indexRouter = require('./src/routes/index');
 const serverRouter = require('./src/routes/servers');
+const { createPages } = require('./src/controllers/serverController');
 
 dotenv.config();
 
@@ -20,14 +20,7 @@ app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/servers", serverRouter);
-
-app.get('/dashboard/painel.html', callPython); 
-function callPython(req, res) {
-    var process = spawn('python', ['./public/python/createPage.py']);
-    process.stdout.on('data', (data) => {
-        res.send(data.toSring());
-    })
-}
+app.use("/python", createPages);
 
 app.listen(DOOR, () => {
     console.log(
