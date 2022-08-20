@@ -13,6 +13,7 @@ for i in result:
         with open(f'public/dashboard/{i[1]}.html', 'r'):
             print(f'{i[1]}.html existe!')
     except IOError:
+        print(f'{i[1]}.html não existe!')
 
         page = open(adress, "w")
 
