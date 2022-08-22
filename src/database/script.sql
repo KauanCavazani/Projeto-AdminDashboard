@@ -1,7 +1,7 @@
 CREATE DATABASE safecommerce;
 use safecommerce;
 
-CREATE TABLE Servidor (
+CREATE TABLE servidor (
 	idServidor INT PRIMARY KEY AUTO_INCREMENT,
     modelo VARCHAR(45),
     SO VARCHAR(45),
