@@ -111,7 +111,7 @@ function createPages() {
 }
 
 function getData(index) {
-    var tableVar = "Servidor"
+    var tableVar = "servidor"
 
     fetch("/servers/getServers", {
         method: "POST",
